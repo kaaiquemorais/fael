@@ -311,7 +311,7 @@ function App() {
                   className="flex-shrink-0"
                   style={{ pointerEvents: 'none', userSelect: 'none' }}
                 >
-                  <div className="relative group bg-gradient-to-br from-[#8B4513] to-[#6B3410] rounded-[1.5rem] p-5 shadow-xl overflow-hidden w-64"
+                  <div className="relative group bg-gradient-to-br from-[#8B4513] to-[#6B3410] rounded-[1.5rem] p-3 md:p-5 shadow-xl overflow-hidden w-36 md:w-64"
                     style={{
                       boxShadow: '0 0 20px rgba(139, 69, 19, 0.4)',
                     }}
@@ -321,12 +321,12 @@ function App() {
                       <img
                         src={service.image}
                         alt={service.name}
-                        className="w-full h-40 object-cover rounded-2xl"
+                        className="w-full h-24 md:h-40 object-cover rounded-2xl"
                         draggable="false"
                         style={{ pointerEvents: 'none', userSelect: 'none' }}
                       />
                     </div>
-                    <h3 className="relative text-xl font-bold text-[#FFE4B5] text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    <h3 className="relative text-sm md:text-xl font-bold text-[#FFE4B5] text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
                       {service.name}
                     </h3>
                   </div>

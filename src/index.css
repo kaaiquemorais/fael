@@ -127,7 +127,7 @@
 
   @media (max-width: 768px) {
     .animate-marquee {
-      animation-duration: 5s;
+      animation-duration: 3s;
     }
   }
 }
