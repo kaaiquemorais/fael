@@ -301,35 +301,72 @@ function App() {
             Serviços Oferecidos
           </h2>
           <div
-            className="relative overflow-hidden"
-            style={{ marginLeft: 'calc(-50vw + 50%)', width: '100vw' }}
+            style={{
+              overflow: 'hidden',
+              width: '100vw',
+              marginLeft: 'calc(-50vw + 50%)',
+            }}
           >
-            <div className="flex items-center animate-marquee">
-              {[...services, ...services].map((service, index) => (
+            <div
+              style={{
+                display: 'flex',
+                animation: 'marquee 12s linear infinite',
+                willChange: 'transform',
+              }}
+            >
+              {[0, 1].map((setIndex) => (
                 <div
-                  key={index}
-                  className="flex-shrink-0 mr-6"
-                  style={{ pointerEvents: 'none', userSelect: 'none' }}
+                  key={setIndex}
+                  style={{ display: 'flex', flexShrink: 0 }}
                 >
-                  <div className="relative group bg-gradient-to-br from-[#8B4513] to-[#6B3410] rounded-[1.5rem] p-3 md:p-5 shadow-xl overflow-hidden w-36 md:w-64"
-                    style={{
-                      boxShadow: '0 0 20px rgba(139, 69, 19, 0.4)',
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50" />
-                    <div className="flex justify-center items-center mb-4">
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                        className="w-full h-24 md:h-40 object-cover rounded-2xl"
-                        draggable="false"
-                        style={{ pointerEvents: 'none', userSelect: 'none' }}
-                      />
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        flexShrink: 0,
+                        paddingRight: '20px',
+                        pointerEvents: 'none',
+                        userSelect: 'none',
+                      }}
+                    >
+                      <div
+                        style={{
+                          background: 'linear-gradient(135deg, #8B4513, #6B3410)',
+                          borderRadius: '1.5rem',
+                          padding: '12px',
+                          boxShadow: '0 0 20px rgba(139, 69, 19, 0.4)',
+                          width: '140px',
+                        }}
+                      >
+                        <img
+                          src={service.image}
+                          alt={service.name}
+                          draggable="false"
+                          style={{
+                            width: '100%',
+                            height: '100px',
+                            objectFit: 'cover',
+                            borderRadius: '1rem',
+                            display: 'block',
+                            pointerEvents: 'none',
+                            userSelect: 'none',
+                          }}
+                        />
+                        <p
+                          style={{
+                            color: '#FFE4B5',
+                            fontFamily: 'Poppins, sans-serif',
+                            fontWeight: 700,
+                            fontSize: '0.8rem',
+                            textAlign: 'center',
+                            marginTop: '8px',
+                          }}
+                        >
+                          {service.name}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="relative text-sm md:text-xl font-bold text-[#FFE4B5] text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      {service.name}
-                    </h3>
-                  </div>
+                  ))}
                 </div>
               ))}
             </div>
