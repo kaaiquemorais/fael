@@ -300,75 +300,34 @@ function App() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#5D4037] text-center mb-12" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Serviços Oferecidos
           </h2>
-          <div
-            style={{
-              overflow: 'hidden',
-              width: '100vw',
-              marginLeft: 'calc(-50vw + 50%)',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                animation: 'marquee 12s linear infinite',
-                willChange: 'transform',
-              }}
-            >
-              {[0, 1].map((setIndex) => (
-                <div
-                  key={setIndex}
-                  style={{ display: 'flex', flexShrink: 0 }}
-                >
-                  {services.map((service, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        flexShrink: 0,
-                        paddingRight: '20px',
-                        pointerEvents: 'none',
-                        userSelect: 'none',
-                      }}
-                    >
-                      <div
-                        style={{
-                          background: 'linear-gradient(135deg, #8B4513, #6B3410)',
-                          borderRadius: '1.5rem',
-                          padding: '12px',
-                          boxShadow: '0 0 20px rgba(139, 69, 19, 0.4)',
-                          width: '140px',
-                        }}
-                      >
-                        <img
-                          src={service.image}
-                          alt={service.name}
-                          draggable="false"
-                          style={{
-                            width: '100%',
-                            height: '100px',
-                            objectFit: 'cover',
-                            borderRadius: '1rem',
-                            display: 'block',
-                            pointerEvents: 'none',
-                            userSelect: 'none',
-                          }}
-                        />
-                        <p
-                          style={{
-                            color: '#FFE4B5',
-                            fontFamily: 'Poppins, sans-serif',
-                            fontWeight: 700,
-                            fontSize: '0.8rem',
-                            textAlign: 'center',
-                            marginTop: '8px',
-                          }}
-                        >
-                          {service.name}
-                        </p>
-                      </div>
+          <div style={{ overflow: 'hidden', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+            <div style={{ display: 'flex', animation: 'marquee 15s linear infinite', willChange: 'transform' }}>
+              {/* Grupo A */}
+              <div style={{ display: 'flex', flexShrink: 0 }}>
+                {services.map((service, index) => (
+                  <div key={index} style={{ flexShrink: 0, width: '180px', paddingRight: '20px', pointerEvents: 'none', userSelect: 'none' }}>
+                    <div style={{ background: 'linear-gradient(135deg, #8B4513, #6B3410)', borderRadius: '1.25rem', padding: '10px', boxShadow: '0 0 20px rgba(139,69,19,0.4)' }}>
+                      <img src={service.image} alt={service.name} draggable="false" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '0.75rem', display: 'block' }} />
+                      <p style={{ color: '#FFE4B5', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.85rem', textAlign: 'center', marginTop: '8px', marginBottom: 0 }}>
+                        {service.name}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              ))}
+                  </div>
+                ))}
+              </div>
+              {/* Grupo B (cópia idêntica para loop contínuo) */}
+              <div style={{ display: 'flex', flexShrink: 0 }} aria-hidden="true">
+                {services.map((service, index) => (
+                  <div key={index} style={{ flexShrink: 0, width: '180px', paddingRight: '20px', pointerEvents: 'none', userSelect: 'none' }}>
+                    <div style={{ background: 'linear-gradient(135deg, #8B4513, #6B3410)', borderRadius: '1.25rem', padding: '10px', boxShadow: '0 0 20px rgba(139,69,19,0.4)' }}>
+                      <img src={service.image} alt={service.name} draggable="false" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '0.75rem', display: 'block' }} />
+                      <p style={{ color: '#FFE4B5', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.85rem', textAlign: 'center', marginTop: '8px', marginBottom: 0 }}>
+                        {service.name}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
