@@ -304,11 +304,11 @@ function App() {
             className="relative overflow-hidden"
             style={{ marginLeft: 'calc(-50vw + 50%)', width: '100vw' }}
           >
-            <div className="flex gap-6 items-center animate-marquee">
-              {[...services, ...services, ...services].map((service, index) => (
+            <div className="flex items-center animate-marquee">
+              {[...services, ...services].map((service, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 mr-6"
                   style={{ pointerEvents: 'none', userSelect: 'none' }}
                 >
                   <div className="relative group bg-gradient-to-br from-[#8B4513] to-[#6B3410] rounded-[1.5rem] p-3 md:p-5 shadow-xl overflow-hidden w-36 md:w-64"
